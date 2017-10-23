@@ -217,6 +217,28 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
     
     
+    // MARK: Activity Indicator
+    
+    // TODO: Add Activity Indicator if loading is long
+//    func startActivityIndicator() {
+//
+//        activityIndicator.center = self.view.center
+//        activityIndicator.hidesWhenStopped = true
+//        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.white
+//
+//        view.addSubview(activityIndicator)
+//        activityIndicator.startAnimating()
+//
+//        UIApplication.shared.beginIgnoringInteractionEvents()
+//    }
+//
+//
+//    func stopActivityIndicator() {
+//
+//        activityIndicator.stopAnimating()
+//        UIApplication.shared.endIgnoringInteractionEvents()
+//    }
+    
     // MARK: Empty Core Data
     func DeleteAllData(){
         
