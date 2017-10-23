@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0FEA1FF8AFE35258ACE53E19 /* Pods_Tiberian.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83FF132C60B3F669EEA4DFA7 /* Pods_Tiberian.framework */; };
+		2F29DFA11F9E3C2A009415AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F29DFA01F9E3C2A009415AE /* Main.storyboard */; };
+		2F29DFA41F9E3C3B009415AE /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F29DFA21F9E3C3B009415AE /* MainVC.swift */; };
+		2F29DFA51F9E3C3B009415AE /* QRScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F29DFA31F9E3C3B009415AE /* QRScannerVC.swift */; };
+		2FF4F7A81F9E3AD80052BBFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4F7A71F9E3AD80052BBFC /* AppDelegate.swift */; };
+		2FF4F7B21F9E3AD80052BBFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF4F7B11F9E3AD80052BBFC /* Assets.xcassets */; };
+		2FF4F7B51F9E3AD80052BBFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FF4F7B31F9E3AD80052BBFC /* LaunchScreen.storyboard */; };
+		2FF4F7C01F9E3AFB0052BBFC /* exportCSV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4F7BF1F9E3AFB0052BBFC /* exportCSV.swift */; };
+		2FF4F7CA1F9E3B980052BBFC /* Tiberian.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4F7C81F9E3B980052BBFC /* Tiberian.xcdatamodeld */; };
+		2FF4F7CE1F9E3BBC0052BBFC /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4F7CB1F9E3BBC0052BBFC /* CustomView.swift */; };
+		2FF4F7CF1F9E3BBC0052BBFC /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4F7CC1F9E3BBC0052BBFC /* CustomProgressView.swift */; };
+		2FF4F7D01F9E3BBC0052BBFC /* KeyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4F7CD1F9E3BBC0052BBFC /* KeyCell.swift */; };
+		2FFC8C2B1F9E3DDC00DB19AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FFC8C2A1F9E3DDC00DB19AB /* Constants.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2F29DFA01F9E3C2A009415AE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		2F29DFA21F9E3C3B009415AE /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		2F29DFA31F9E3C3B009415AE /* QRScannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerVC.swift; sourceTree = "<group>"; };
+		2FF4F7A41F9E3AD80052BBFC /* Tiberian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiberian.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FF4F7A71F9E3AD80052BBFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2FF4F7B11F9E3AD80052BBFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2FF4F7B41F9E3AD80052BBFC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2FF4F7B61F9E3AD80052BBFC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2FF4F7BF1F9E3AFB0052BBFC /* exportCSV.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = exportCSV.swift; sourceTree = "<group>"; };
+		2FF4F7C91F9E3B980052BBFC /* Tiberian.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tiberian.xcdatamodel; sourceTree = "<group>"; };
+		2FF4F7CB1F9E3BBC0052BBFC /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		2FF4F7CC1F9E3BBC0052BBFC /* CustomProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomProgressView.swift; sourceTree = "<group>"; };
+		2FF4F7CD1F9E3BBC0052BBFC /* KeyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCell.swift; sourceTree = "<group>"; };
+		2FFC8C2A1F9E3DDC00DB19AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		5C3723431C4F5F937797D72B /* Pods-Tiberian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiberian.release.xcconfig"; path = "Pods/Target Support Files/Pods-Tiberian/Pods-Tiberian.release.xcconfig"; sourceTree = "<group>"; };
+		83FF132C60B3F669EEA4DFA7 /* Pods_Tiberian.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tiberian.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1BBD3D189B80758683EDBB3 /* Pods-Tiberian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tiberian.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tiberian/Pods-Tiberian.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2FF4F7A11F9E3AD80052BBFC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0FEA1FF8AFE35258ACE53E19 /* Pods_Tiberian.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FF4F79B1F9E3AD80052BBFC = {
+			isa = PBXGroup;
+			children = (
+				2FF4F7A61F9E3AD80052BBFC /* Tiberian */,
+				2FF4F7A51F9E3AD80052BBFC /* Products */,
+				898BF56C369E77DF528D963B /* Pods */,
+				7813436DA1DABD078DE79E22 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2FF4F7A51F9E3AD80052BBFC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FF4F7A41F9E3AD80052BBFC /* Tiberian.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2FF4F7A61F9E3AD80052BBFC /* Tiberian */ = {
+			isa = PBXGroup;
+			children = (
+				2FF4F7BE1F9E3AEC0052BBFC /* Controller */,
+				2FF4F7BD1F9E3AE70052BBFC /* View */,
+				2FF4F7BC1F9E3AE10052BBFC /* Model */,
+				2FF4F7A71F9E3AD80052BBFC /* AppDelegate.swift */,
+				2F29DFA01F9E3C2A009415AE /* Main.storyboard */,
+				2FF4F7B11F9E3AD80052BBFC /* Assets.xcassets */,
+				2FF4F7B31F9E3AD80052BBFC /* LaunchScreen.storyboard */,
+				2FF4F7B61F9E3AD80052BBFC /* Info.plist */,
+				2FF4F7BF1F9E3AFB0052BBFC /* exportCSV.swift */,
+				2FFC8C2A1F9E3DDC00DB19AB /* Constants.swift */,
+			);
+			path = Tiberian;
+			sourceTree = "<group>";
+		};
+		2FF4F7BC1F9E3AE10052BBFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2FF4F7C81F9E3B980052BBFC /* Tiberian.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2FF4F7BD1F9E3AE70052BBFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2FF4F7CC1F9E3BBC0052BBFC /* CustomProgressView.swift */,
+				2FF4F7CB1F9E3BBC0052BBFC /* CustomView.swift */,
+				2FF4F7CD1F9E3BBC0052BBFC /* KeyCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2FF4F7BE1F9E3AEC0052BBFC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F29DFA21F9E3C3B009415AE /* MainVC.swift */,
+				2F29DFA31F9E3C3B009415AE /* QRScannerVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7813436DA1DABD078DE79E22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				83FF132C60B3F669EEA4DFA7 /* Pods_Tiberian.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		898BF56C369E77DF528D963B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E1BBD3D189B80758683EDBB3 /* Pods-Tiberian.debug.xcconfig */,
+				5C3723431C4F5F937797D72B /* Pods-Tiberian.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2FF4F7A31F9E3AD80052BBFC /* Tiberian */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FF4F7B91F9E3AD80052BBFC /* Build configuration list for PBXNativeTarget "Tiberian" */;
+			buildPhases = (
+				F5911BD84A03107F36FA52B7 /* [CP] Check Pods Manifest.lock */,
+				2FF4F7A01F9E3AD80052BBFC /* Sources */,
+				2FF4F7A11F9E3AD80052BBFC /* Frameworks */,
+				2FF4F7A21F9E3AD80052BBFC /* Resources */,
+				6CE7A3F0454CD8C84EA9B377 /* [CP] Embed Pods Frameworks */,
+				89F02FE4727CB8D311C03A90 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tiberian;
+			productName = Tiberian;
+			productReference = 2FF4F7A41F9E3AD80052BBFC /* Tiberian.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2FF4F79C1F9E3AD80052BBFC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Michel Kansou";
+				TargetAttributes = {
+					2FF4F7A31F9E3AD80052BBFC = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 2FF4F79F1F9E3AD80052BBFC /* Build configuration list for PBXProject "Tiberian" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2FF4F79B1F9E3AD80052BBFC;
+			productRefGroup = 2FF4F7A51F9E3AD80052BBFC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2FF4F7A31F9E3AD80052BBFC /* Tiberian */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2FF4F7A21F9E3AD80052BBFC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FF4F7B51F9E3AD80052BBFC /* LaunchScreen.storyboard in Resources */,
+				2FF4F7B21F9E3AD80052BBFC /* Assets.xcassets in Resources */,
+				2F29DFA11F9E3C2A009415AE /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6CE7A3F0454CD8C84EA9B377 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Tiberian/Pods-Tiberian-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Base32/Base32.framework",
+				"${BUILT_PRODUCTS_DIR}/OneTimePassword/OneTimePassword.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Base32.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OneTimePassword.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tiberian/Pods-Tiberian-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89F02FE4727CB8D311C03A90 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Tiberian/Pods-Tiberian-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5911BD84A03107F36FA52B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tiberian-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2FF4F7A01F9E3AD80052BBFC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FF4F7CE1F9E3BBC0052BBFC /* CustomView.swift in Sources */,
+				2FF4F7D01F9E3BBC0052BBFC /* KeyCell.swift in Sources */,
+				2FF4F7C01F9E3AFB0052BBFC /* exportCSV.swift in Sources */,
+				2FF4F7CF1F9E3BBC0052BBFC /* CustomProgressView.swift in Sources */,
+				2F29DFA51F9E3C3B009415AE /* QRScannerVC.swift in Sources */,
+				2F29DFA41F9E3C3B009415AE /* MainVC.swift in Sources */,
+				2FF4F7A81F9E3AD80052BBFC /* AppDelegate.swift in Sources */,
+				2FF4F7CA1F9E3B980052BBFC /* Tiberian.xcdatamodeld in Sources */,
+				2FFC8C2B1F9E3DDC00DB19AB /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2FF4F7B31F9E3AD80052BBFC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FF4F7B41F9E3AD80052BBFC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2FF4F7B71F9E3AD80052BBFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2FF4F7B81F9E3AD80052BBFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2FF4F7BA1F9E3AD80052BBFC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1BBD3D189B80758683EDBB3 /* Pods-Tiberian.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7VV6446NP5;
+				INFOPLIST_FILE = Tiberian/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.E13.Tiberian;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2FF4F7BB1F9E3AD80052BBFC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C3723431C4F5F937797D72B /* Pods-Tiberian.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7VV6446NP5;
+				INFOPLIST_FILE = Tiberian/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.E13.Tiberian;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2FF4F79F1F9E3AD80052BBFC /* Build configuration list for PBXProject "Tiberian" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FF4F7B71F9E3AD80052BBFC /* Debug */,
+				2FF4F7B81F9E3AD80052BBFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FF4F7B91F9E3AD80052BBFC /* Build configuration list for PBXNativeTarget "Tiberian" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FF4F7BA1F9E3AD80052BBFC /* Debug */,
+				2FF4F7BB1F9E3AD80052BBFC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2FF4F7C81F9E3B980052BBFC /* Tiberian.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2FF4F7C91F9E3B980052BBFC /* Tiberian.xcdatamodel */,
+			);
+			currentVersion = 2FF4F7C91F9E3B980052BBFC /* Tiberian.xcdatamodel */;
+			path = Tiberian.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2FF4F79C1F9E3AD80052BBFC /* Project object */;
+}
