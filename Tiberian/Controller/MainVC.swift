@@ -165,21 +165,18 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        print("user pressed Cell")
-        
         let cell = tableView.cellForRow(at: indexPath) as! KeyCell
         
         
         UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             cell.backgroundColor = UIColor(hex: "746EC2")
-            
         }, completion: { _ in
             UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
                 cell.backgroundColor = .clear
-                
             }, completion: nil)
         })
         
+        UIPasteboard.general.string = cell.currentPassword.text
         let oldName = cell.name.text
         cell.name.text = "Copied code"
         DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
