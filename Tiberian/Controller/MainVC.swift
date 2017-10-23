@@ -199,9 +199,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             let selectedKey = controller.object(at: indexPath as IndexPath)
             context.delete(selectedKey)
             ad.saveContext()
-            
-            tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.reloadData()
+            
             
         } else if editingStyle == .insert {
             

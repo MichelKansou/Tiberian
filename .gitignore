@@ -26,3 +26,6 @@ xcuserdata/
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
+
+## Remove Pods folder ##
+Pods/

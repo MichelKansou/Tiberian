@@ -93,7 +93,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="6UV-IE-fKs" customClass="CustomProgressView" customModule="Tiberian" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="601" width="375" height="4"/>
+                                <rect key="frame" x="0.0" y="599" width="375" height="8"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="4" id="q2f-yo-PRC"/>
                                 </constraints>
