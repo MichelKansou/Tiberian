@@ -11,6 +11,8 @@
 		2F29DFA11F9E3C2A009415AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F29DFA01F9E3C2A009415AE /* Main.storyboard */; };
 		2F29DFA41F9E3C3B009415AE /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F29DFA21F9E3C3B009415AE /* MainVC.swift */; };
 		2F29DFA51F9E3C3B009415AE /* QRScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F29DFA31F9E3C3B009415AE /* QRScannerVC.swift */; };
+		2F6020021F9F46A200B7AC55 /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6020011F9F46A200B7AC55 /* PopupVC.swift */; };
+		2FED09781F9E8B97005F51AE /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED09771F9E8B97005F51AE /* IntroVC.swift */; };
 		2FF4F7A81F9E3AD80052BBFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4F7A71F9E3AD80052BBFC /* AppDelegate.swift */; };
 		2FF4F7B21F9E3AD80052BBFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF4F7B11F9E3AD80052BBFC /* Assets.xcassets */; };
 		2FF4F7B51F9E3AD80052BBFC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FF4F7B31F9E3AD80052BBFC /* LaunchScreen.storyboard */; };
@@ -26,6 +28,8 @@
 		2F29DFA01F9E3C2A009415AE /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2F29DFA21F9E3C3B009415AE /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		2F29DFA31F9E3C3B009415AE /* QRScannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerVC.swift; sourceTree = "<group>"; };
+		2F6020011F9F46A200B7AC55 /* PopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
+		2FED09771F9E8B97005F51AE /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 		2FF4F7A41F9E3AD80052BBFC /* Tiberian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiberian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF4F7A71F9E3AD80052BBFC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FF4F7B11F9E3AD80052BBFC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 			children = (
 				2F29DFA21F9E3C3B009415AE /* MainVC.swift */,
 				2F29DFA31F9E3C3B009415AE /* QRScannerVC.swift */,
+				2FED09771F9E8B97005F51AE /* IntroVC.swift */,
+				2F6020011F9F46A200B7AC55 /* PopupVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -271,6 +277,8 @@
 				2FF4F7C01F9E3AFB0052BBFC /* exportCSV.swift in Sources */,
 				2FF4F7CF1F9E3BBC0052BBFC /* CustomProgressView.swift in Sources */,
 				2F29DFA51F9E3C3B009415AE /* QRScannerVC.swift in Sources */,
+				2FED09781F9E8B97005F51AE /* IntroVC.swift in Sources */,
+				2F6020021F9F46A200B7AC55 /* PopupVC.swift in Sources */,
 				2F29DFA41F9E3C3B009415AE /* MainVC.swift in Sources */,
 				2FF4F7A81F9E3AD80052BBFC /* AppDelegate.swift in Sources */,
 				2FF4F7CA1F9E3B980052BBFC /* Tiberian.xcdatamodeld in Sources */,

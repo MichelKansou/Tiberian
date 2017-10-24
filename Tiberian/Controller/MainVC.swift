@@ -24,6 +24,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     var filteredKeys = [Key]()
     var inSearchMode = false
     var timer = Timer()
+    var selectedKey: Key!
+    
     @IBOutlet weak var progressBar: CustomProgressView!
     
     
@@ -41,6 +43,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         updateCurrentPasswords()
         attemptFetch()
         progressTimer()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        tableView.reloadData()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -193,10 +200,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            let selectedKey = controller.object(at: indexPath as IndexPath)
-            context.delete(selectedKey)
-            ad.saveContext()
-            tableView.reloadData()
+            selectedKey = controller.object(at: indexPath as IndexPath)
+            performSegue(withIdentifier: "popupSegue", sender: self)
+//            context.delete(selectedKey)
+//            ad.saveContext()
+//            tableView.reloadData()
             
             
         } else if editingStyle == .insert {
@@ -333,14 +341,14 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
     }
     
-    //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "QRScannerVC" {
-//
-//            if let scannerVC = segue.destination as? QRScannerVC {
-//                scannerVC.delegate = self
-//            }
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "popupSegue" {
+
+            if let popupVC = segue.destination as? PopupVC {
+                popupVC.selectedKey = selectedKey
+            }
+        }
+    }
 
 
 }

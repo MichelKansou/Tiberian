@@ -17,6 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        
+        if checkDataExist() {
+            let mainScreen = storyBoard.instantiateViewController(withIdentifier: "MainVC")
+            self.window?.rootViewController = mainScreen
+        } else {
+            let introScreen = storyBoard.instantiateViewController(withIdentifier: "IntroVC")
+            self.window?.rootViewController = introScreen
+        }
+        
         return true
     }
 
@@ -43,6 +54,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    
+    func checkDataExist() -> Bool {
+        let request: NSFetchRequest<Key> =  Key.fetchRequest()
+        var results = [Key]()
+        
+        do {
+            
+            results = try context.fetch(request)
+            
+        } catch {
+            
+            let error = error as NSError
+            print("\(error)")
+        }
+        
+        return results.count > 0
+    }
+    
 
     // MARK: - Core Data stack
 

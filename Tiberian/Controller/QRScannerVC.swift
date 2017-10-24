@@ -21,16 +21,7 @@ class QRScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     var url: String!
     
-    let supportedCodeTypes = [AVMetadataObjectTypeUPCECode,
-                              AVMetadataObjectTypeCode39Code,
-                              AVMetadataObjectTypeCode39Mod43Code,
-                              AVMetadataObjectTypeCode93Code,
-                              AVMetadataObjectTypeCode128Code,
-                              AVMetadataObjectTypeEAN8Code,
-                              AVMetadataObjectTypeEAN13Code,
-                              AVMetadataObjectTypeAztecCode,
-                              AVMetadataObjectTypePDF417Code,
-                              AVMetadataObjectTypeQRCode]
+    var pushToMainView = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +45,7 @@ class QRScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             
             // Set delegate and use the default dispatch queue to execute the call back
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-            captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
+            captureMetadataOutput.metadataObjectTypes = [AVMetadataObjectTypeQRCode]
             
             // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
             videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
@@ -116,14 +107,20 @@ class QRScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         // Get the metadata object.
         let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
         
-        if supportedCodeTypes.contains(metadataObj.type) {
+        if AVMetadataObjectTypeQRCode == metadataObj.type {
             // If the found metadata is equal to the QR code metadata then update the status label's text and set the bounds
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
             qrCodeFrameView?.frame = barCodeObject!.bounds
-            
+
             if metadataObj.stringValue != nil {
                 self.url = metadataObj.stringValue
-                dismiss(animated: true, completion: nil)
+                self.captureSession?.stopRunning()
+                if pushToMainView {
+                    let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainVC") as! MainVC
+                    self.present(mainVC, animated: true, completion: nil)
+                } else {
+                    dismiss(animated: true, completion: nil)
+                }
             }
         }
     }
