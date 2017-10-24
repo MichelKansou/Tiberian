@@ -20,6 +20,10 @@ class PopupVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     @IBAction func undoBtnPressed(_ sender: Any) {
         dismissAnimation()

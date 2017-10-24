@@ -16,6 +16,10 @@ class IntroVC: UIViewController {
         
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @IBAction func getStartedPressed(_ sender: Any) {
         performSegue(withIdentifier: "ScannerVC", sender: sender)
     }
