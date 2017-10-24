@@ -314,34 +314,38 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jhJ-Lf-DLO">
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7c-f4-8He">
-                                        <rect key="frame" x="330" y="5" width="30" height="50"/>
-                                        <state key="normal" title="Add">
-                                            <color key="titleColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F7c-f4-8He">
+                                        <rect key="frame" x="335" y="17" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="OAU-z8-Y1m"/>
+                                            <constraint firstAttribute="width" constant="25" id="Xg7-L3-VG3"/>
+                                        </constraints>
+                                        <state key="normal" image="plus-nobg"/>
                                         <connections>
                                             <segue destination="yRe-4E-NKD" kind="presentation" identifier="QRScannerVC" id="h4r-YC-Lx2"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjZ-AV-wMC">
-                                        <rect key="frame" x="15" y="5" width="79" height="50"/>
-                                        <state key="normal" title="Export CSV">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pjZ-AV-wMC">
+                                        <rect key="frame" x="15" y="23" width="50" height="14"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="14" id="EOF-1A-Cjo"/>
+                                            <constraint firstAttribute="width" constant="50" id="dOv-xK-DVp"/>
+                                        </constraints>
+                                        <state key="normal" image="more-nobg">
                                             <color key="titleColor" red="0.96078431369999995" green="0.96470588239999999" blue="0.98431372549999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="exportBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TCL-bC-UO7"/>
+                                            <action selector="moreBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TCL-bC-UO7"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="pjZ-AV-wMC" firstAttribute="top" secondItem="jhJ-Lf-DLO" secondAttribute="top" constant="5" id="4sV-qT-vc5"/>
-                                    <constraint firstAttribute="trailing" secondItem="F7c-f4-8He" secondAttribute="trailing" constant="15" id="Jxt-nn-9f1"/>
+                                    <constraint firstAttribute="trailing" secondItem="F7c-f4-8He" secondAttribute="trailing" constant="15" id="IDd-bD-Gfn"/>
+                                    <constraint firstItem="F7c-f4-8He" firstAttribute="centerY" secondItem="jhJ-Lf-DLO" secondAttribute="centerY" id="JN6-5Z-Jh5"/>
                                     <constraint firstAttribute="height" constant="60" id="X7x-pY-buM"/>
-                                    <constraint firstItem="pjZ-AV-wMC" firstAttribute="leading" secondItem="jhJ-Lf-DLO" secondAttribute="leading" constant="15" id="fGB-md-Zow"/>
-                                    <constraint firstItem="F7c-f4-8He" firstAttribute="top" secondItem="jhJ-Lf-DLO" secondAttribute="top" constant="5" id="h8Q-pU-rlS"/>
-                                    <constraint firstAttribute="bottom" secondItem="F7c-f4-8He" secondAttribute="bottom" constant="5" id="u4C-zm-83M"/>
-                                    <constraint firstAttribute="bottom" secondItem="pjZ-AV-wMC" secondAttribute="bottom" constant="5" id="wPd-eG-B4J"/>
+                                    <constraint firstItem="pjZ-AV-wMC" firstAttribute="centerY" secondItem="jhJ-Lf-DLO" secondAttribute="centerY" id="g36-7f-sSW"/>
+                                    <constraint firstItem="pjZ-AV-wMC" firstAttribute="leading" secondItem="jhJ-Lf-DLO" secondAttribute="leading" constant="15" id="rEb-xv-Rtp"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -433,6 +437,8 @@
     </scenes>
     <resources>
         <image name="logo" width="961" height="1126"/>
+        <image name="more-nobg" width="142" height="30"/>
+        <image name="plus-nobg" width="113" height="113"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="h4r-YC-Lx2"/>

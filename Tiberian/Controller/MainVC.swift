@@ -9,13 +9,9 @@
 import UIKit
 import OneTimePassword
 import CoreData
+import MessageUI
 
-
-protocol updateView {
-    func changeName()
-}
-
-class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UISearchBarDelegate {
+class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UISearchBarDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -299,12 +295,58 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     }
     
     
-    // MARK: Export Core Data to CSV
+    // MARK: More Button
     
-    @IBAction func exportBtnPressed(_ sender: Any) {
-        let request:NSFetchRequest<Key> = Key.fetchRequest()
-        let exportString = createExportString(key: request)
-        saveAndExport(exportString: exportString, view: self)
+    @IBAction func moreBtnPressed(_ sender: Any) {
+        
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
+        
+        let exportAction = UIAlertAction(title: "Export CSV", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            let request:NSFetchRequest<Key> = Key.fetchRequest()
+            let exportString = createExportString(key: request)
+            saveAndExport(exportString: exportString, view: self)
+        })
+        let contactAction = UIAlertAction(title: "Contact Us", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            
+            let subject = "Feedback Tiberian"
+            let toRecipents = ["michel.kansou@outlook.fr"]
+            let mc: MFMailComposeViewController = MFMailComposeViewController()
+            mc.mailComposeDelegate = self
+            mc.setSubject(subject)
+            mc.setToRecipients(toRecipents)
+            
+            self.present(mc, animated: true, completion: nil)
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Cancelled")
+        })
+        
+        
+        optionMenu.addAction(exportAction)
+        optionMenu.addAction(contactAction)
+        optionMenu.addAction(cancelAction)
+        
+        present(optionMenu, animated: true, completion: nil)
+    }
+    
+    // MARK: Handel Mail
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        switch result {
+            case .cancelled:
+                print("Mail cancelled")
+            case .saved:
+                print("Mail saved")
+            case .sent:
+                print("Mail sent")
+            case .failed:
+                print("Mail sent failure: \(String(describing: error?.localizedDescription))")
+        }
+        self.dismiss(animated: true, completion: nil)
     }
     
     
