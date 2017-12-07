@@ -13,25 +13,23 @@ import CoreData
 func createExportString(key: NSFetchRequest<Key>) -> String {
     var name : String?
     var issuer : String?
-    var currentPassword : String?
     var url : String?
     var created : NSDate? = NSDate()
     
-    var export : String = NSLocalizedString("Name, Issuer, CurrentPassword, Url, Created Date \n", comment: "")
+    var export : String = NSLocalizedString("Name, Issuer, Url, Created Date \n", comment: "")
     
     do {
         let searchResults = try context.fetch(key)
         for key in searchResults {
             name = key.name
             issuer = key.issuer
-            currentPassword = key.currentPassword
             url = key.url
             created = key.created
             
             if let createdDateString = created {
-                export += "\(name!), \(issuer!), \(currentPassword!), \(url!), \(createdDateString)\n"
+                export += "\(name!), \(issuer!), \(url!), \(createdDateString)\n"
             } else {
-                export += "\(name!), \(issuer!), \(currentPassword!), \(url!)\n"
+                export += "\(name!), \(issuer!), \(url!)\n"
             }
         }
     } catch {
@@ -42,7 +40,12 @@ func createExportString(key: NSFetchRequest<Key>) -> String {
 }
 
 
-func saveAndExport(exportString: String, view: UIViewController) {
+func importCSV(documentPicker: UIDocumentPickerViewController, view: UIViewController) {
+    documentPicker.modalPresentationStyle = .formSheet
+    view.present(documentPicker, animated: true, completion: nil)
+}
+
+func exportCSV(exportString: String, view: UIViewController) {
     
     let exportFilePath = NSTemporaryDirectory() + "tiberian.csv"
     let exportFileURL = NSURL(fileURLWithPath: exportFilePath)

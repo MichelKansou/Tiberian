@@ -10,17 +10,22 @@ import UIKit
 import OneTimePassword
 import CoreData
 import MessageUI
+import CSV
 
-class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UISearchBarDelegate, MFMailComposeViewControllerDelegate {
+class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate, UISearchBarDelegate, MFMailComposeViewControllerDelegate, UIDocumentPickerDelegate, WarningDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var controller : NSFetchedResultsController<Key>!
+    var controller: NSFetchedResultsController<Key>!
     var filteredKeys = [Key]()
     var inSearchMode = false
     var timer = Timer()
     var selectedKey: Key!
+    
+    var backgroundTaskIdentifier: UIBackgroundTaskIdentifier?
+    
+    let documentPicker = UIDocumentPickerViewController(documentTypes: ["public.text"], in: .import)
     
     @IBOutlet weak var progressBar: CustomProgressView!
     
@@ -29,9 +34,14 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        backgroundTaskIdentifier = UIApplication.shared.beginBackgroundTask(expirationHandler: {
+            UIApplication.shared.endBackgroundTask(self.backgroundTaskIdentifier!)
+        })
+        
         tableView.delegate = self
         tableView.dataSource = self
         searchBar.delegate = self
+        documentPicker.delegate = self
         
         searchBar.returnKeyType = UIReturnKeyType.done
         progressBar.progress = 0.0
@@ -243,6 +253,40 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
 //        UIApplication.shared.endIgnoringInteractionEvents()
 //    }
     
+   // MARK: Document Picker
+    func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
+        return
+    }
+    
+    // Did pick document
+    func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentAt url: URL) {
+        
+        if controller.documentPickerMode == UIDocumentPickerMode.import {
+            let stream = InputStream(fileAtPath: url.path)!
+            let csv = try! CSVReader(stream: stream, hasHeaderRow: true)
+            
+            while csv.next() != nil {
+                let key = Key(context: context)
+                
+                if let name = csv["Name"] {
+                    key.name = name.trimmingCharacters(in: .whitespaces)
+                }
+                if let issuer = csv[" Issuer"] {
+                    key.issuer = issuer.trimmingCharacters(in: .whitespaces)
+                }
+                if let url = csv[" Url"] {
+                    key.url = url.trimmingCharacters(in: .whitespaces)
+                    print(url)
+                }
+                
+                key.created = Date() as NSDate
+                ad.saveContext()
+                updateCurrentPasswords()
+            }
+        }
+    }
+    
+    
     // MARK: Empty Core Data
     func DeleteAllData(){
         
@@ -281,9 +325,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         do {
             let searchResults = try context.fetch(request)
             for key in searchResults {
-                if let url = key.url {
-                    if let token = Token(url: URL(string: url)!) {
-                        key.currentPassword = "\(token.currentPassword!)"
+                if let stringUrl = key.url {
+                    if let url = URL(string: stringUrl) {
+                        if let token = Token(url: url) {
+                            key.currentPassword = "\(token.currentPassword!)"
+                        }
                     }
                 }
             }
@@ -305,8 +351,20 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             (alert: UIAlertAction!) -> Void in
             let request:NSFetchRequest<Key> = Key.fetchRequest()
             let exportString = createExportString(key: request)
-            saveAndExport(exportString: exportString, view: self)
+            exportCSV(exportString: exportString, view: self)
         })
+        
+        let importAction = UIAlertAction(title: "Import CSV", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            importCSV(documentPicker: self.documentPicker, view: self)
+        })
+        
+        
+//        let eraseAction = UIAlertAction(title: "Erase", style: .destructive, handler: {
+//            (alert: UIAlertAction!) -> Void in
+//            self.performSegue(withIdentifier: "warningSegue", sender: self)
+//        })
+        
         let contactAction = UIAlertAction(title: "Contact Us", style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             
@@ -327,7 +385,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         
         optionMenu.addAction(exportAction)
+        optionMenu.addAction(importAction)
         optionMenu.addAction(contactAction)
+//        optionMenu.addAction(eraseAction)
         optionMenu.addAction(cancelAction)
         
         present(optionMenu, animated: true, completion: nil)
@@ -383,11 +443,22 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         }
     }
     
+    // TODO: Get back to IntroVC after erase
+    func onContinueTapped() {
+        DeleteAllData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "popupSegue" {
 
             if let popupVC = segue.destination as? PopupVC {
                 popupVC.selectedKey = selectedKey
+            }
+        }
+        if segue.identifier == "warningSegue" {
+            
+            if let warningVC = segue.destination as? WarningVC {
+                warningVC.delegate = self
             }
         }
     }

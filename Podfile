@@ -8,4 +8,5 @@ target 'Tiberian' do
   # Pods for Tiberian
   pod 'OneTimePassword', '~> 3.0'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git', :branch => 'swift3'
+  pod 'CSV.swift', '~> 2.1.0'
 end
