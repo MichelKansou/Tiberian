@@ -12,6 +12,7 @@
 		2F29DFA41F9E3C3B009415AE /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F29DFA21F9E3C3B009415AE /* MainVC.swift */; };
 		2F29DFA51F9E3C3B009415AE /* QRScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F29DFA31F9E3C3B009415AE /* QRScannerVC.swift */; };
 		2F6020021F9F46A200B7AC55 /* PopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6020011F9F46A200B7AC55 /* PopupVC.swift */; };
+		2F9A04C22011FF470065CC26 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9A04C12011FF470065CC26 /* EditVC.swift */; };
 		2FD827591FD83E9600077AC3 /* WarningVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD827581FD83E9600077AC3 /* WarningVC.swift */; };
 		2FED09781F9E8B97005F51AE /* IntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FED09771F9E8B97005F51AE /* IntroVC.swift */; };
 		2FF4F7A81F9E3AD80052BBFC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF4F7A71F9E3AD80052BBFC /* AppDelegate.swift */; };
@@ -30,6 +31,7 @@
 		2F29DFA21F9E3C3B009415AE /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		2F29DFA31F9E3C3B009415AE /* QRScannerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRScannerVC.swift; sourceTree = "<group>"; };
 		2F6020011F9F46A200B7AC55 /* PopupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupVC.swift; sourceTree = "<group>"; };
+		2F9A04C12011FF470065CC26 /* EditVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		2FD827581FD83E9600077AC3 /* WarningVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WarningVC.swift; sourceTree = "<group>"; };
 		2FED09771F9E8B97005F51AE /* IntroVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroVC.swift; sourceTree = "<group>"; };
 		2FF4F7A41F9E3AD80052BBFC /* Tiberian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tiberian.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 				2F29DFA21F9E3C3B009415AE /* MainVC.swift */,
 				2F29DFA31F9E3C3B009415AE /* QRScannerVC.swift */,
 				2FED09771F9E8B97005F51AE /* IntroVC.swift */,
+				2F9A04C12011FF470065CC26 /* EditVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				2FF4F7A81F9E3AD80052BBFC /* AppDelegate.swift in Sources */,
 				2FF4F7CA1F9E3B980052BBFC /* Tiberian.xcdatamodeld in Sources */,
 				2FFC8C2B1F9E3DDC00DB19AB /* Constants.swift in Sources */,
+				2F9A04C22011FF470065CC26 /* EditVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

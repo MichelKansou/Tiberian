@@ -16,6 +16,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var editBtn: UIButton!
     
     var controller: NSFetchedResultsController<Key>!
     var filteredKeys = [Key]()
@@ -40,6 +41,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.allowsSelection = true
         searchBar.delegate = self
         documentPicker.delegate = self
         
@@ -177,10 +179,18 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
     // MARK: User Selected Cell
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let cell = tableView.cellForRow(at: indexPath) as! KeyCell
         
+        if (tableView.isEditing == true) {
+            selectedKey = controller.object(at: indexPath as IndexPath)
+            performSegue(withIdentifier: "editViewSegue", sender: self)
+        } else {
+            copyPassword(cell: cell)
+        }
         
+    }
+    
+    func copyPassword(cell: KeyCell) {
         UIView.animate(withDuration: 0.5, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
             cell.backgroundColor = UIColor(hex: "746EC2")
         }, completion: { _ in
@@ -359,6 +369,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             importCSV(documentPicker: self.documentPicker, view: self)
         })
         
+        let donationAction = UIAlertAction(title: "Donation", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.performSegue(withIdentifier: "donationSegue", sender: self)
+        })
+        
         
 //        let eraseAction = UIAlertAction(title: "Erase", style: .destructive, handler: {
 //            (alert: UIAlertAction!) -> Void in
@@ -387,6 +402,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
         optionMenu.addAction(exportAction)
         optionMenu.addAction(importAction)
         optionMenu.addAction(contactAction)
+        optionMenu.addAction(donationAction)
 //        optionMenu.addAction(eraseAction)
         optionMenu.addAction(cancelAction)
         
@@ -407,6 +423,25 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
                 print("Mail sent failure: \(String(describing: error?.localizedDescription))")
         }
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: Edit Button
+    
+    @IBAction func editBtnPressed(_ sender: Any) {
+        
+        if let editBtnTitle = editBtn.currentTitle {
+            if (editBtnTitle == "Edit") {
+                editBtn.setTitle("Done", for: .normal)
+                tableView.isEditing = true
+                tableView.allowsSelectionDuringEditing = true
+            }
+            if (editBtnTitle == "Done") {
+                editBtn.setTitle("Edit", for: .normal)
+                tableView.isEditing = false
+                tableView.allowsSelectionDuringEditing = false
+            }
+        }
+        
     }
     
     
@@ -459,6 +494,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, NSFe
             
             if let warningVC = segue.destination as? WarningVC {
                 warningVC.delegate = self
+            }
+        }
+        if segue.identifier == "editViewSegue" {
+            if let editVC = segue.destination as? EditVC {
+                editVC.key = selectedKey
             }
         }
     }
